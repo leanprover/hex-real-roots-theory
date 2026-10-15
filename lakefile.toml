@@ -1,5 +1,5 @@
-name = "hex-real-roots-mathlib"
-defaultTargets = ["HexRealRootsMathlib"]
+name = "hex-real-roots-theory"
+defaultTargets = ["HexRealRootsTheory"]
 
 leanOptions = [
   { name = "doc.verso", value = true },
@@ -9,27 +9,27 @@ leanOptions = [
 [[require]]
 name = "HexPoly"
 git = "https://github.com/leanprover/hex-poly.git"
-rev = "v0.9.0"
+rev = "v0.10.0"
 
 [[require]]
-name = "HexPolyMathlib"
-git = "https://github.com/leanprover/hex-poly-mathlib.git"
-rev = "v0.9.0"
+name = "HexPolyTheory"
+git = "https://github.com/leanprover/hex-poly-theory.git"
+rev = "v0.10.0"
 
 [[require]]
 name = "HexPolyZ"
 git = "https://github.com/leanprover/hex-poly-z.git"
-rev = "v0.9.0"
+rev = "v0.10.0"
 
 [[require]]
-name = "HexPolyZMathlib"
-git = "https://github.com/leanprover/hex-poly-z-mathlib.git"
-rev = "v0.9.0"
+name = "HexPolyZTheory"
+git = "https://github.com/leanprover/hex-poly-z-theory.git"
+rev = "v0.10.0"
 
 [[require]]
 name = "HexRealRoots"
 git = "https://github.com/leanprover/hex-real-roots.git"
-rev = "v0.9.0"
+rev = "v0.10.0"
 
 [[require]]
 name = "TauCeti"
@@ -42,8 +42,8 @@ git = "https://github.com/leanprover-community/mathlib4.git"
 rev = "6b7abb3c7686292736be2955bd3eb9ebf63b456a"
 
 [[lean_lib]]
-name = "HexRealRootsMathlib"
+name = "HexRealRootsTheory"
 
 [[lean_lib]]
-name = "HexRealRootsMathlibTests"
-globs = ["HexRealRootsMathlib.IsolateRootsTests", "HexRealRootsMathlib.IsolateRootsElabTests", "HexRealRootsMathlib.SturmTests", "HexRealRootsMathlib.RealRootCountTests", "HexRealRootsMathlib.TarskiTests"]
+name = "HexRealRootsTheoryTests"
+globs = ["HexRealRootsTheory.IsolateRootsTests", "HexRealRootsTheory.IsolateRootsElabTests", "HexRealRootsTheory.SturmTests", "HexRealRootsTheory.RealRootCountTests", "HexRealRootsTheory.TarskiTests"]

@@ -1,4 +1,4 @@
-# hex-real-roots-mathlib
+# hex-real-roots-theory
 
 Part of [`hex`](https://github.com/kim-em/hex-dev), a computer algebra
 library for Lean 4. The aim is fast executable code, fully verified, built
@@ -12,12 +12,12 @@ executable signed-remainder chain to `Polynomial ℝ`, proves soundness and
 completeness of the isolator, transports through squarefree cores, and presents
 the result as ordinary rational intervals with proof fields.
 It also exports `Real.instIsRealClosed`, constructed from real square roots
-and odd-degree polynomial root existence, through `HexRealRootsMathlib.RealClosed`
+and odd-degree polynomial root existence, through `HexRealRootsTheory.RealClosed`
 and the umbrella import.
 
 The public umbrella exports the general Sturm–Tarski root-sum theorem and
 integer query semantics through `TarskiSoundness` and `TarskiReal`. The shared
-foundation imports pinned Tau Ceti in this Mathlib companion. These modules
+foundation imports pinned Tau Ceti in this theory companion. These modules
 are integrated in the development source; availability in a published version
 requires the maintainer’s next package sync.
 
@@ -25,13 +25,13 @@ requires the maintainer’s next package sync.
 
 ```toml
 [[require]]
-name = "hex-real-roots-mathlib"
-git = "https://github.com/leanprover/hex-real-roots-mathlib.git"
+name = "hex-real-roots-theory"
+git = "https://github.com/leanprover/hex-real-roots-theory.git"
 rev = "main"
 ```
 
 ```lean
-import HexRealRootsMathlib
+import HexRealRootsTheory
 
 open Hex Polynomial
 
@@ -48,7 +48,7 @@ For a closed squarefree polynomial over `ℚ` with integer coefficients and posi
 degree, `real_root_count` proves the exact number of distinct real roots:
 
 ```lean
-import HexRealRootsMathlib.RealRootCount
+import HexRealRootsTheory.RealRootCount
 
 open Polynomial
 
@@ -65,7 +65,7 @@ The general Sturm theorems use only Mathlib types. `Sturm.IsSturmChain.sturm_Ioc
 counts roots on `(a, b]`, including equal endpoints, and `Sturm.IsSturmChain.sturm`
 counts roots on the real line. Their hypothesis is that the multiset of real
 roots has no duplicates. The variation counts use Mathlib’s `List.signVariations`;
-`HexRealRootsMathlib.signVar_eq_list` identifies the Mathlib-free executable counter
+`HexRealRootsTheory.signVar_eq_list` identifies the Mathlib-free executable counter
 with this API.
 
 The corresponding Mathlib sources can be checked with
@@ -115,7 +115,7 @@ inputs have equal lengths and entrywise positive scaling. `TarskiSigns` proves
 finite and infinite endpoint sign-array agreement and extracts the checked
 variation value.
 Together they support the rational/integer whole-`Option` agreement theorem
-in hex-sturm-mathlib without assuming root-sum semantics.
+in hex-sturm-theory without assuming root-sum semantics.
 
 `TarskiFoundation`, `TarskiSoundness` and `TarskiReal` import the proved
 signed-remainder theorem and polynomial IVT/Rolle foundation from Tau Ceti.
@@ -150,7 +150,7 @@ emits a small proof term whose count checks reduce in the kernel. It does not
 ask the kernel to repeat bisection. Descartes search is never trusted: every
 output interval and the final root total are certified by Sturm counts.
 
-See the [SPEC](SPEC/hex-real-roots-mathlib.md) and the Hex manual's real-roots
+See the [SPEC](SPEC/hex-real-roots-theory.md) and the Hex manual's real-roots
 chapter for the theorem chain and checked examples.
 
 # Contributing
